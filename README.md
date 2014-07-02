@@ -34,13 +34,17 @@ you can call initialize function with parameters:
 
 	ubertesters.initialize(null, null, /*LOCKING_MODE*/, /*ACTIVATION_MODE*/);
 OR
+
 	cordova.exec(null, null, "UbertestersCordova", "initialize", [/*LOCKING_MODE*/, /*ACTIVATION_MODE*/]);
 
 Examples:
+
 1...
 	ubertesters.initialize(null, null, 'LockingModeDisableUbertestersIfBuildNotExist');
+
 2...
 	ubertesters.initialize(null, null, 'LockingModeDisableUbertestersIfBuildNotExist', 'Shake');
+
 3...
 cordova.exec(null, null, "UbertestersCordova", "initialize",
 ['LockingModeDisableUbertestersIfBuildNotExist', 'Shake']);
