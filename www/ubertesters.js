@@ -1,15 +1,14 @@
 var ubertesters = {
-	initialize: function(successCallback, failureCallback) {
-        cordova.exec(null, null, "UbertestersCordova", "initialize", []);
-	},
-	initialize: function(successCallback, failureCallback, lockingMode) {
-        cordova.exec(null, null, "UbertestersCordova", "initialize", [lockingMode]);
-	},
-	initialize: function(successCallback, failureCallback, lockingMode, activationMode) {
-        cordova.exec(null, null, "UbertestersCordova", "initialize", [lockingMode, activationMode]);
-	},
-	setIsIgnored: function(successCallback, failureCallback, isIgnored) {
-		cordova.exec(null, null, "UbertestersCordova", "setIsIgnored", [isIgnored]);
+	initialize: function(successCallback, failureCallback, args) {
+		func = window.onerror;
+		window.onerror = function (errorMsg, url, lineNumber) {
+			if(func != null){
+				func(errorMsg, url, lineNumber)
+			}
+			errorStr = 'Error2: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber;
+			cordova.exec(null, null, "UbertestersCordova", "logError", [errorStr]);
+		}
+        cordova.exec(null, null, "UbertestersCordova", "initialize", args != null? args: []);
 	},
 	showUtPage: function(successCallback, failureCallback) {
 		cordova.exec(null, null, "UbertestersCordova", "showUtPage", []);	

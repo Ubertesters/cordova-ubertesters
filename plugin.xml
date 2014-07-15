@@ -38,4 +38,24 @@
         <framework src="OpenGLES.framework" weak="true" />
         <framework src="CoreMotion.framework" weak="true" />
     </platform>
+	
+	<!--android-->
+	<platform name="android">	
+	
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UbertestersCordova">
+                <param name="android-package" value="com.ubertesters.sdk.UbertestersCordova"/>
+            </feature>
+        </config-file>
+	
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.GET_TASKS"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+		</config-file>
+		
+		<source-file src="src/android/libs/ubertesters.sdk.android.jar" target-dir="libs" />
+		<source-file src="src/android/UbertestersCordova.java" target-dir="src/com/ubertesters/sdk" />
+		
+	</platform>
 </plugin>
