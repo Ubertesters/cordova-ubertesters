@@ -32,3 +32,4 @@ var ubertesters = {
 		cordova.exec(null, null, "UbertestersCordova", "setOfflineModeEnabled", [isEnabled]);	
 	}	
 };
+module.exports = ubertesters;
