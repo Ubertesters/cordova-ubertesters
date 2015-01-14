@@ -32,7 +32,7 @@ Or you can add ubertesters.js to your sources  and call ubertesters in this way:
 If you want to use specific locking mode or activation mode in initialization,
 you can call initialize function with parameters:
 
-	ubertesters.initialize(null, null, /*LOCKING_MODE*/, /*ACTIVATION_MODE*/);
+	ubertesters.initialize(null, null, [/*LOCKING_MODE*/, /*ACTIVATION_MODE*/]);
 OR
 
 	cordova.exec(null, null, "UbertestersCordova", "initialize", [/*LOCKING_MODE*/, /*ACTIVATION_MODE*/]);
@@ -40,10 +40,10 @@ OR
 Examples:
 
 1...
-	ubertesters.initialize(null, null, 'LockingModeDisableUbertestersIfBuildNotExist');
+	ubertesters.initialize(null, null, ['LockingModeDisableUbertestersIfBuildNotExist']);
 
 2...
-	ubertesters.initialize(null, null, 'LockingModeDisableUbertestersIfBuildNotExist', 'Shake');
+	ubertesters.initialize(null, null, ['LockingModeDisableUbertestersIfBuildNotExist', 'Shake']);
 
 3...
 cordova.exec(null, null, "UbertestersCordova", "initialize",
