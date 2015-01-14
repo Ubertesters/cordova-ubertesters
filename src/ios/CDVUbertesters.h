@@ -18,6 +18,5 @@
 - (void) logInfo:(CDVInvokedUrlCommand*)command;
 - (void) logError:(CDVInvokedUrlCommand*)command;
 - (void) logWarn:(CDVInvokedUrlCommand*)command;
-- (void) setOfflineModeEnabled:(CDVInvokedUrlCommand*)command;
 
 @end

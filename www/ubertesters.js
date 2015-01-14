@@ -27,9 +27,6 @@ var ubertesters = {
 	},	
 	logWarn: function(successCallback, failureCallback, warn) {
 		cordova.exec(null, null, "UbertestersCordova", "logWarn", [warn]);	
-	},	
-	setOfflineModeEnabled: function(successCallback, failureCallback, isEnabled) {
-		cordova.exec(null, null, "UbertestersCordova", "setOfflineModeEnabled", [isEnabled]);	
 	}	
 };
 module.exports = ubertesters;

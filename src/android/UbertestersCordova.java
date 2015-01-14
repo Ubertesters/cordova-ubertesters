@@ -63,10 +63,6 @@ public class UbertestersCordova extends CordovaPlugin {
             String message = args.getString(0);
             Ubertesters.logger().warn(message);
             callbackContext.success();
-        } else if (action.equals("setOfflineModeEnabled")) {
-            boolean value = args.getBoolean(0);
-            Ubertesters.setOfflineModeEnabled(value);
-            callbackContext.success();
         }
 
         callbackContext.sendPluginResult(result);
